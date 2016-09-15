@@ -1,0 +1,33 @@
+{
+  "name": "redux-config",
+  "version": "0.0.1",
+  "description": "Rapidly config Redux or React Redux",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qftgtr/redux-config.git"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "redux",
+    "react-redux",
+    "config"
+  ],
+  "authors": [
+    "Zehao Li <zehaoli@hotmail.com> (https://github.com/qftgtr)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qftgtr/redux-config/issues"
+  },
+  "homepage": "https://github.com/qftgtr/redux-config",
+  "npmName": "redux-config",
+  "peerDependencies": {
+    "redux": "^2.0.0 || ^3.0.0"
+  },
+}
