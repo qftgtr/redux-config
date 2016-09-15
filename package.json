@@ -1,17 +1,25 @@
 {
   "name": "redux-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rapidly config Redux or React Redux",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:lib": "babel src --out-dir lib --ignore *.test.js",
+    "build:umd": "cross-env NODE_ENV=development webpack",
+    "build:umd:min": "cross-env NODE_ENV=production webpack",
+    "build": "npm run clean && npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "clean": "rimraf lib dist",
+    "lint": "eslint src test",
+    "prepublish": "npm run build",
+    "test": "mocha --compilers js:babel-register src/**/*.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qftgtr/redux-config.git"
   },
   "files": [
-    "src"
+    "lib",
+    "dist"
   ],
   "keywords": [
     "redux",
@@ -30,4 +38,22 @@
   "peerDependencies": {
     "redux": "^2.0.0 || ^3.0.0"
   },
+  "dependencies": {
+    "lodash": "^4.15.0",
+    "redux-actions": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "cross-env": "^2.0.1",
+    "mocha": "^3.0.2",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2"
+  }
 }
