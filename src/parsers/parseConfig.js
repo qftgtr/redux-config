@@ -1,6 +1,7 @@
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import forEach from 'lodash/forEach';
+import * as reducerFunctions from './lib/reducerFunctions';
 
 /**
  * Parse configuration
@@ -39,6 +40,10 @@ export default function(configuration) {
       if (!isObject(rawActionConfig)) {
         throw new Error(`config.${storeName}.actions.${actionName} must be an object.`);
         return;
+      }
+      
+      if (typeof rawActionConfig.reducer === 'string') {
+        rawActionConfig.reducer = reducerFunctions[rawActionConfig.reducer];
       }
       
       if (!isFunction(rawActionConfig.reducer)) {

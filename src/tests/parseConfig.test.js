@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import parseConfig from '../components/parseConfig';
+import parseConfig from '../parsers/parseConfig';
 
 describe('parseConfig(configuration)', () => {
   it('should throw an error if configuration is not set', () => {
@@ -57,7 +57,7 @@ describe('parseConfig(configuration)', () => {
       actions: {
         ACTION: {
           inputs: ['x'],
-          reducer: input => input
+          reducer: 'SET'
         }
       }
     }

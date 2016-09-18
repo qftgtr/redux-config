@@ -1,6 +1,6 @@
 {
   "name": "redux-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rapidly config Redux or React Redux",
   "main": "lib/index.js",
   "scripts": {

@@ -1,6 +1,6 @@
-import parseConfig from './components/parseConfig'
-import parseActions from './components/parseActions';
-import parseReducers from './components/parseReducers';
+import parseConfig from './parsers/parseConfig'
+import parseActions from './parsers/parseActions';
+import parseReducers from './parsers/parseReducers';
 
 export default function(configuration) {
   const {
@@ -8,10 +8,10 @@ export default function(configuration) {
     actionConfig,
     reducerConfig,
   } = parseConfig(configuration);
-  
+
   const actions = parseActions(actionConfig);
   const reducers = parseReducers(reducerConfig);
-  
+
   return {
     persists,
     actions,

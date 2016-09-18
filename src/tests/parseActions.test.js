@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import parseActions from '../components/parseActions';
+import parseActions from '../parsers/parseActions';
 
 const actionConfig = {
   ACTION1: {

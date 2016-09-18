@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import parseReducers from '../components/parseReducers';
+import parseReducers from '../parsers/parseReducers';
 
 const reducerConfig = {
   store1: {
