@@ -1,7 +1,7 @@
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import forEach from 'lodash/forEach';
-import * as reducerFunctions from './lib/reducerFunctions';
+import * as reducerFunctions from './reducerFunctions';
 
 /**
  * Parse configuration

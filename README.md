@@ -21,8 +21,6 @@ npm install --save redux-config
 ### 1. Configure redux actions and reducers in a config file (e.g. `redux/config.js`)
 
 ```js
-import { REDUCER } from 'redux-config'
-
 export const reduxStore1 = {
   default: { param1: '', param2: '' },
   actions: {
@@ -30,7 +28,7 @@ export const reduxStore1 = {
       inputs: ['param1', 'param2'],
       reducer: 'MERGE', // pre-defined reducer function
     },
-    CLEAR_METEOR_ACCOUNT: {
+    CLEAR_REDUX_STORE1: {
       inputs: [],
       reducer: state => {
         return { param1: '', param2: '' };
@@ -57,7 +55,7 @@ export const reduxStore2 = {
 
 #### 1.1. Predefined reducer functions
 
-See [`src/parsers/reducerFunctions.js`](https://github.com/qftgtr/redux-config/tree/master/src/parsers/reducerFunctions.js)
+See [`src/parsers/reducerFunctions.js`](https://github.com/qftgtr/redux-config/blob/master/src/parsers/reducerFunctions.js)
 
 
 ### 2. Initialize redux store (e.g. `redux/index.js`)
@@ -80,15 +78,42 @@ module.exports = {
 };
 ```
 
-### 3. Use actions and reducers
+### 3. Use actions and reducers in React components
+
 ```js
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { actions } from 'path/to/redux/config.js'
+import { actions } from 'path/to/redux'
 
-class ReactComponent extends ...
+class ReactComponent extends Component {
+  ...
+  
+  // the method that calls the redux action
+  callReduxAction(val1, val2) {
+    this.props.actions.UPDATE_REDUX_STORE1({ param1: val1, param2: val2 })
+  }
+  
+  ...
+  
+  render() {
+    ...
+    
+    // read data from redux store
+    const reduxStore1Param1 = this.props.reduxStore1.param1;
+    const reduxStore2List = this.props.reduxStore2.list;
+    
+    ...
+  }
+}
 
-module.export = connect()(ReactComponent)
+function mapStateToProps(state) {
+  return {
+    reduxStore1: state.reduxStore1,
+    reduxStore2: state.reduxStore2
+  };
+}
 
+module.exports = connect(mapStateToProps, actions)(ReactComponent);
 ```
 
 
