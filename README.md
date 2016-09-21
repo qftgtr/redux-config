@@ -8,7 +8,7 @@ Rapidly config [Redux](https://github.com/reactjs/redux) or [React Redux](https:
 
 <!--[![NPM](https://nodei.co/npm/redux-config.png?downloads=true)](https://nodei.co/npm/redux-config/)-->
 
-[Redux](http://redux.js.org/) is a very popular state management library for [React](https://facebook.github.io/react/) and [React Native](http://facebook.github.io/react-native/). I personally very appreciate its simplistic design. But in contrast to that, setting up Redux for a new project (especially for the first time) is not very straightforward, and adding new actions/reducers does take some time on duplicated codes. I feel there should be a better way to set up Redux and take the full advantage of its simplicity, and this is the reason I made this library so that I could configure Redux in just a few lines of code.
+[Redux](http://redux.js.org/) is a very popular state management library for [React](https://facebook.github.io/react/) and [React Native](http://facebook.github.io/react-native/). I personally very appreciate its simplistic design. But in contrast to that, setting up Redux for a new project (especially for the first time) is not very straightforward, and adding new actions/reducers does take some time on duplicated codes. I feel there should be a better way to set up Redux and take the full advantage of its simplicity. This is the reason I made this library so that configure Redux could be done in just a few lines of code.
 
 This is a very early release now, so if you have any questions/suggestions, or find any bugs, please [submit an issue](https://github.com/qftgtr/redux-config/issues/new). Thanks!
 
@@ -20,7 +20,7 @@ npm install --save redux-config
 
 ## Usage
 
-I'm working on a detailed documentation, but the following 3-step should be a rough demonstration of how `redux-config` works. I also wish to write a 5-min setup guide for those who learn Redux for the first time. I feel this would be helpful because when I first encountered Redux it took me almost a full day to read through its [documentation](http://redux.js.org/docs/basics/) to just write a helloworld.
+I'm working on a detailed documentation, but the following 3-step should be a rough demonstration of how `redux-config` works. I also wish to write a 5-min setup guide for those who learn Redux for the first time. It should be helpful since when I first encountered Redux, it took me almost a full day to read through its [documentation](http://redux.js.org/docs/basics/) to just write a helloworld.
 
 ### 1. Configure redux actions and reducers in a config file (e.g. `redux/config.js`)
 
@@ -123,7 +123,7 @@ module.exports = connect(mapStateToProps, actions)(ReactComponent);
 
 ## How Does It Work?
 
-Basically the `config.js` is parsed to generate Redux actions and reducers automatically.
+Basically the config file (`config.js`) is parsed by `redux-config` to generate Redux actions and reducers automatically.
 
 ## License
 
